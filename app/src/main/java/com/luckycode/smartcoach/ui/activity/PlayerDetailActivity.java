@@ -50,8 +50,8 @@ public class PlayerDetailActivity extends AppCompatActivity implements AppBarLay
         appBarLayout.addOnOffsetChangedListener(this);
         toolbarHeaderView.bindTo(player.getName()+" "+player.getSurname(), player.getPosition());
         floatHeaderView.bindTo(player.getName()+" "+player.getSurname(), player.getPosition());
-        int id = getResources().getIdentifier(player.getPhoto(), "drawable", getPackageName());
-        photo.setImageResource(id);
+//        int id = getResources().getIdentifier(player.getPhoto(), "drawable", getPackageName());
+//        photo.setImageResource(id);
     }
 
     public void setRecyclerViewUp(){

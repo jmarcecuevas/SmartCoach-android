@@ -67,8 +67,8 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             name.setText(player.getName());
             surname.setText(player.getSurname());
             position.setText(player.getPosition());
-            int id = context.getResources().getIdentifier(player.getPhoto(), "drawable", context.getPackageName());
-            photo.setImageResource(id);
+//            int id = context.getResources().getIdentifier(player.getPhoto(), "drawable", context.getPackageName());
+//            photo.setImageResource(id);
         }
 
         @Override

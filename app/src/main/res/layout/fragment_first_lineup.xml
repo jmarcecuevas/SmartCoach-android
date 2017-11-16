@@ -25,7 +25,6 @@
                 android:layout_width="58dp"
                 android:layout_height="58dp"
                 android:id="@+id/first"
-                android:src="@drawable/sergio_romero"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"/>
 
@@ -47,7 +46,6 @@
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:id="@+id/second"
-                    android:src="@drawable/gabriel_mercado"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -56,7 +54,6 @@
                     android:layout_height="58dp"
                     android:id="@+id/third"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/nicolas_otamendi"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -65,7 +62,6 @@
                     android:layout_height="58dp"
                     android:id="@+id/fourth"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/javier_mascherano"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -74,7 +70,6 @@
                     android:layout_height="58dp"
                     android:id="@+id/fifth"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/augusto_fernandez"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -100,15 +95,13 @@
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_gravity="bottom"
-                    android:src="@drawable/angel_dimaria" />
+                    android:layout_gravity="bottom"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:id="@+id/seventh"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/ever_banega"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -117,7 +110,6 @@
                     android:layout_height="58dp"
                     android:id="@+id/eighth"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/fernando_gago"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -141,7 +133,6 @@
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:id="@+id/nineth"
-                    android:src="@drawable/paulo_dybala"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -150,7 +141,6 @@
                     android:layout_height="58dp"
                     android:id="@+id/tenth"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/lionel_messi"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -160,8 +150,7 @@
                     android:layout_height="58dp"
                     android:layout_marginLeft="20dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_gravity="bottom"
-                    android:src="@drawable/dario_benedetto" />
+                    android:layout_gravity="bottom" />
 
             </LinearLayout>
 
