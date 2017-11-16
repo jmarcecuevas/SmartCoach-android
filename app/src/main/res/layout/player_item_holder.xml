@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:background="#ffffff">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/photo"
+        android:layout_alignParentLeft="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="8dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#000000"
+        />
+
+    <TextView
+        android:id="@+id/surname"
+        android:layout_toRightOf="@+id/photo"
+        android:layout_alignTop="@+id/photo"
+        android:layout_marginTop="7dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DYBALA"
+        android:includeFontPadding="false" />
+
+    <TextView
+        android:id="@+id/name"
+        android:textSize="16sp"
+        android:layout_below="@+id/surname"
+        android:layout_toRightOf="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
+        android:includeFontPadding="false"
+        android:layout_marginLeft="1dp"
+        android:text="Paulo Exequiel" />
+
+    <TextView
+        android:id="@+id/position"
+        android:textSize="13sp"
+        android:layout_below="@+id/name"
+        android:layout_toRightOf="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
+        android:layout_marginLeft="1dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="Delantero" />
+
+
+    <ProgressBar
+        android:id="@+id/levelBar"
+        style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/levelTV"
+        android:indeterminateOnly="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/levelTV"
+        android:layout_height="wrap_content"
+        android:text="Nivel"
+        android:layout_alignTop="@+id/name"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

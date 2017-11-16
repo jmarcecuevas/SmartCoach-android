@@ -1,0 +1,292 @@
+[
+  {
+    "id": 1,
+    "name": "Sergio",
+    "surname": "Romero",
+    "photo": "sergio_romero",
+    "position": "Arquero",
+    "level": 6,
+    "dorsal": 1,
+    "incompatibles" : [2,4,28]
+  },
+  {
+    "id": 2,
+    "name": "Nahuel",
+    "surname": "Guzmán",
+    "photo": "nahuel_guzman",
+    "position": "Arquero",
+    "level": 4,
+    "dorsal": 28,
+    "incompatibles" : [1]
+  },
+  {
+    "id": 3,
+    "name": "Gerónimo",
+    "surname": "Rulli",
+    "photo": "geronimo_rulli",
+    "position": "Arquero",
+    "level": 7,
+    "dorsal": 82,
+    "incompatibles" : []
+  },
+  {
+    "id": 4,
+    "name": "Nicolás",
+    "surname": "Otamendi",
+    "photo": "nicolas_otamendi",
+    "position": "Defensor",
+    "level": 7,
+    "dorsal": 2,
+    "incompatibles" : [1,6,5]
+  },
+  {
+    "id": 5,
+    "name": "Javier",
+    "surname": "Mascherano",
+    "photo": "javier_mascherano",
+    "position": "Defensor",
+    "level": 8,
+    "dorsal": 6,
+    "incompatibles" : [4]
+  },
+  {
+    "id": 6,
+    "name": "Federico",
+    "surname": "Fazio",
+    "photo": "federico_fazio",
+    "position": "Defensor",
+    "level": 5,
+    "dorsal": 3,
+    "incompatibles" : [4]
+  },
+  {
+    "id": 7,
+    "name": "Ángel",
+    "surname": "Di María",
+    "photo": "angel_dimaria",
+    "position": "Arquero",
+    "level": 7,
+    "dorsal": 7,
+    "incompatibles" : []
+  },
+  {
+    "id": 8,
+    "name": "Javier",
+    "surname": "Pastore",
+    "photo": "javier_pastore",
+    "position": "Mediocampista",
+    "level": 6,
+    "dorsal": 8,
+    "incompatibles" : [9]
+  },
+  {
+    "id": 9,
+    "name": "Augusto",
+    "surname": "Fernández",
+    "photo": "augusto_fernandez",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 5,
+    "incompatibles" : [8]
+  },
+  {
+    "id": 10,
+    "name": "Manuel",
+    "surname": "Lanzini",
+    "photo": "manuel_lanzini",
+    "position": "Mediocampista",
+    "level": 6,
+    "dorsal": 15,
+    "incompatibles" : []
+  },
+  {
+    "id": 11,
+    "name": "Sergio",
+    "surname": "Aguero",
+    "photo": "sergio_aguero",
+    "position": "Delantero",
+    "level": 5,
+    "dorsal": 18,
+    "incompatibles" : [23]
+  },
+  {
+    "id": 12,
+    "name": "Paulo",
+    "surname": "Dybala",
+    "photo": "paulo_dybala",
+    "position": "Delantero",
+    "level": 8,
+    "dorsal": 13,
+    "incompatibles" : [24]
+  },
+  {
+    "id": 13,
+    "name": "Mauro",
+    "surname": "Icardi",
+    "photo": "mauro_icardi",
+    "position": "Delantero",
+    "level": 7,
+    "dorsal": 19,
+    "incompatibles" : []
+  },
+  {
+    "id": 14,
+    "name": "Gabriel",
+    "surname": "Mercado",
+    "photo": "gabriel_mercado",
+    "position": "Defensor",
+    "level": 6,
+    "dorsal": 4,
+    "incompatibles" : []
+  },
+  {
+    "id": 15,
+    "name": "Guido",
+    "surname": "Pizarro",
+    "photo": "guido_pizarro",
+    "position": "Mediocampista",
+    "level": 6,
+    "dorsal": 19,
+    "incompatibles" : [17,18]
+  },
+  {
+    "id": 16,
+    "name": "Nicolás",
+    "surname": "Pareja",
+    "photo": "nicolas_pareja",
+    "position": "Defensor",
+    "level": 6,
+    "dorsal": 21,
+    "incompatibles" : []
+  },
+  {
+    "id": 17,
+    "name": "Joaquín",
+    "surname": "Correa",
+    "photo": "joaquin_correa",
+    "position": "Delantero",
+    "level": 7,
+    "dorsal": 25,
+    "incompatibles" : [15]
+  },
+  {
+    "id": 18,
+    "name": "Éver",
+    "surname": "Banega",
+    "photo": "ever_banega",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 30,
+    "incompatibles" : [15]
+  },
+  {
+    "id": 19,
+    "name": "Emiliano",
+    "surname": "Rigoni",
+    "photo": "emiliano_rigoni",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 34,
+    "incompatibles" : [20,21,22]
+  },
+  {
+    "id": 20,
+    "name": "Fernando",
+    "surname": "Gago",
+    "photo": "fernando_gago",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 5,
+    "incompatibles" : [19]
+  },
+  {
+    "id": 21,
+    "name": "Leandro",
+    "surname": "Paredes",
+    "photo": "leandro_paredes",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 28,
+    "incompatibles" : [19]
+  },
+  {
+    "id": 22,
+    "name": "Marcos",
+    "surname": "Acuña",
+    "photo": "marcos_acunia",
+    "position": "Mediocampista",
+    "level": 7,
+    "dorsal": 37,
+    "incompatibles" : [19]
+  },
+  {
+    "id": 23,
+    "name": "Darío",
+    "surname": "Benedetto",
+    "photo": "dario_benedetto",
+    "position": "Delantero",
+    "level": 9,
+    "dorsal": 9,
+    "incompatibles" : [11]
+  },
+  {
+    "id": 24,
+    "name": "Lionel",
+    "surname": "Messi",
+    "photo": "lionel_messi",
+    "position": "Delantero",
+    "level": 10,
+    "dorsal": 10,
+    "incompatibles" : [12,26,29]
+  },
+  {
+    "id": 25,
+    "name": "Lucas",
+    "surname": "Biglia",
+    "photo": "lucas_biglia",
+    "position": "Mediocampista",
+    "level": 6,
+    "dorsal": 32,
+    "incompatibles" : []
+  },
+  {
+    "id": 26,
+    "name": "Lautaro",
+    "surname": "Acosta",
+    "photo": "lautaro_acosta",
+    "position": "Delantero",
+    "level": 8,
+    "dorsal": 31,
+    "incompatibles" : [24]
+  },
+  {
+    "id": 27,
+    "name": "Gonzalo",
+    "surname": "Higuain",
+    "photo": "gonzalo_higuain",
+    "position": "Delantero",
+    "level": 3,
+    "dorsal": 49,
+    "incompatibles" : []
+  },
+  {
+    "id": 28,
+    "name": "Pablo",
+    "surname": "Perez",
+    "photo": "pablo_perez",
+    "position": "Mediocampista",
+    "level": 8,
+    "dorsal": 12,
+    "incompatibles" : [1]
+  },
+  {
+    "id": 29,
+    "name": "Ezequiel",
+    "surname": "Lavezzi",
+    "photo": "ezequiel_lavezzi",
+    "position": "Delantero",
+    "level": 8,
+    "dorsal": 12,
+    "incompatibles" : [24]
+  }
+]
