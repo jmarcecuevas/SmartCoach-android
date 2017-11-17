@@ -1,84 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/stadium"
-        android:scaleType="centerCrop"
-        android:alpha="0.7"/>
+        android:src="@drawable/soccer_night"
+        android:alpha="0.8"
+        android:scaleType="centerCrop" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/empty_profile"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/lionel_messi"
             android:id="@+id/photo"
+            app:civ_border_color="#ffffff"
+            app:civ_border_width="3dp"
             android:layout_centerHorizontal="true"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:id="@+id/name"
+            android:textColorHint="#ffffff"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:lines="1"
+            android:inputType="textPersonName"
+            android:textColor="#ffffff"
             android:layout_below="@+id/photo"
             android:hint="Nombre" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:id="@+id/surname"
+            android:textColor="#ffffff"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:textColorHint="#ffffff"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:layout_below="@+id/name"
             android:hint="Apellido" />
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+            xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/segmented"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/surname"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            segmentedgroup:sc_border_width="2dp"
+            segmentedgroup:sc_corner_radius="10dp">
+
+            <RadioButton
+                android:id="@+id/goalkeeper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arquero"
+                android:textSize="18dp"
+                android:checked="true"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/defender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Defensor"
+                android:textSize="18dp"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/midfielder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Mediocampista"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/forward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Delantero"
+                style="@style/RadioButton" />
+
+        </info.hoang8f.android.segmented.SegmentedGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/position"
-            android:layout_below="@+id/surname"
-            android:textSize="20dp"
-            android:text="Posicion"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/surname">
-        </Spinner>
+            android:layout_marginTop="16dp"
+            android:id="@+id/leveltextview"
+            android:text="Nivel"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:layout_below="@+id/segmented"/>
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/seekBar"
-            android:layout_below="@+id/position"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/leveltextview"
+            android:layout_marginTop="16dp"
             android:progressTint="#FFFFFF"
-            android:thumbTint="#FFFFFF"
+            android:thumbTint="@android:color/holo_blue_light"
             android:backgroundTint="#FFFFFF"
             android:max="10"
             android:min="1" />
 
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/holo_blue_light"
             android:textColor="#ffffff"
             android:text="Guardar"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
-
-
-
-
 
 </RelativeLayout>
