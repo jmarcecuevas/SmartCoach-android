@@ -152,6 +152,15 @@ public class MainInteractor extends LuckyInteractor<SplashPresenter> {
         }
     }
 
+    public void savePlayer(Player player){
+        try{
+            Dao dao=dbHelper.getDaoPlayer();
+            dao.create(player);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     public interface InteractorListener{
         void onLocalJSONStored(List<Player> players);
         void onDataLoaded(List<Player> players);

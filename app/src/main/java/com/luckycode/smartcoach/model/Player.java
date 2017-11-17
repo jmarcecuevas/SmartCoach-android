@@ -26,21 +26,18 @@ public class Player implements Serializable,Comparable<Player>{
     private String position;
     @DatabaseField
     private int level;
-    @DatabaseField
-    private int dorsal;
     @DatabaseField(dataType = DataType.SERIALIZABLE)
     private SerializedList<Integer> incompatibles;
     private List<Player> incompatiblesPlayers=new ArrayList<>();
 
     public Player(){}
 
-    public Player(String name,String surname,String photo,String position,int level,int dorsal){
+    public Player(String name,String surname,String photo,String position,int level){
         this.name=name;
         this.surname=surname;
         this.photo=photo;
         this.position=position;
         this.level=level;
-        this.dorsal=dorsal;
         incompatibles=new SerializedList<>();
     }
 
@@ -77,10 +74,6 @@ public class Player implements Serializable,Comparable<Player>{
 
     public String getName() {
         return name;
-    }
-
-    public int getDorsal() {
-        return dorsal;
     }
 
     public String getPhoto() {

@@ -56,7 +56,7 @@
 
         <info.hoang8f.android.segmented.SegmentedGroup
             xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/segmented"
+            android:id="@+id/segmentedGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -67,7 +67,7 @@
             segmentedgroup:sc_corner_radius="10dp">
 
             <RadioButton
-                android:id="@+id/goalkeeper"
+                android:id="@+id/goalkeeperRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Arquero"
@@ -76,7 +76,7 @@
                 style="@style/RadioButton" />
 
             <RadioButton
-                android:id="@+id/defender"
+                android:id="@+id/defenderRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Defensor"
@@ -84,7 +84,7 @@
                 style="@style/RadioButton" />
 
             <RadioButton
-                android:id="@+id/midfielder"
+                android:id="@+id/midfielderRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
@@ -92,7 +92,7 @@
                 style="@style/RadioButton" />
 
             <RadioButton
-                android:id="@+id/forward"
+                android:id="@+id/forwardRB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
@@ -109,12 +109,12 @@
             android:text="Nivel"
             android:textColor="#ffffff"
             android:textSize="18sp"
-            android:layout_below="@+id/segmented"/>
+            android:layout_below="@+id/segmentedGroup"/>
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/seekBar"
+            android:id="@+id/levelSeekbar"
             android:layout_below="@+id/leveltextview"
             android:layout_marginTop="16dp"
             android:progressTint="#FFFFFF"
@@ -127,6 +127,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/save"
             android:background="@android:color/holo_blue_light"
             android:textColor="#ffffff"
             android:text="Guardar"
