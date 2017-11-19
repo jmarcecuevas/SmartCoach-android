@@ -1,6 +1,12 @@
 package com.luckycode.smartcoach.ui.activity;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -27,18 +33,24 @@ import info.hoang8f.android.segmented.SegmentedGroup;
 public class AddPlayerActivity extends LuckyActivity implements AddPlayerView,RadioGroup.OnCheckedChangeListener,
         SeekBar.OnSeekBarChangeListener{
 
+    private static final int READ_STORAGE_PERMISSION_REQUEST_CODE = 123;
+    private static final int PICK_IMAGE_ID = 234;
     @BindView(R.id.photo)ImageView photo;
     @BindView(R.id.name)TextView name;
     @BindView(R.id.surname)TextView surname;
+    @BindView(R.id.leveltextview)TextView levelTextview;
     @BindView(R.id.segmentedGroup)SegmentedGroup segmentedGroup;
-    private static final int PICK_IMAGE_ID = 234;
+    @BindView(R.id.levelSeekbar)SeekBar levelSeekbar;
     private AddPlayerPresenter presenter;
-    private String position="Arquero";
-    private int level=1;
+    private String position;
+    private int level;
 
     @Override
     protected void init() {
+        position="Arquero";
+        level=1;
         segmentedGroup.setOnCheckedChangeListener(this);
+        levelSeekbar.setOnSeekBarChangeListener(this);
         MainInteractor interactor=new MainInteractor(this,getHelper());
         presenter=new AddPlayerPresenter(this,interactor);
     }
@@ -58,6 +70,50 @@ public class AddPlayerActivity extends LuckyActivity implements AddPlayerView,Ra
         return 0;
     }
 
+    @OnClick(R.id.save)
+    public void onClick(View view){
+        presenter.savePlayer(name.getText().toString(),surname.getText().toString(),
+                "bandera",position,level);
+    }
+
+    @OnClick(R.id.photo)
+    public void onPhotoClick(View view){
+        Intent chooseImageIntent = ImagePicker.getPickImageIntent(this);
+        startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
+    }
+
+    @Override
+    public void onEmptyNameError() {
+        Toast.makeText(this,"Ingrese un nombre",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onEmptySurnameError() {
+        Toast.makeText(this,"Ingrese un apellido",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPlayerStored() {
+        Toast.makeText(this,"Jugador agregado.",Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        levelTextview.setText("Nivel de juego: "+String.valueOf(progress+1));
+        level=progress+1;
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId){
@@ -75,56 +131,4 @@ public class AddPlayerActivity extends LuckyActivity implements AddPlayerView,Ra
                 break;
         }
     }
-
-    @OnClick(R.id.save)
-    public void onClick(View view){
-        presenter.savePlayer(name.getText().toString(),surname.getText().toString(),
-                "sdsd",position,level);
-    }
-
-    @OnClick(R.id.photo)
-    public void onPhotoClick(View view){
-        //Intent chooseImageIntent = ImagePicker.getPickImageIntent(getActivity());
-        //startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
-    }
-
-    @Override
-    public void onEmptyNameError() {
-        Toast.makeText(this,"Ingrese un nombre",Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onEmptySurnameError() {
-        Toast.makeText(this,"Ingrese un apellido",Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onPlayerStored() {
-        Toast.makeText(this,"Jugador agregado.",Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        level=progress;
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PICK_IMAGE_ID && resultCode == RESULT_OK){
-            //photo= ImagePicker.getImageFromResult(this,resultCode,data);
-            //presenter.uploadPhoto(ImagePicker.getMediaPath());
-        }
-    }
-
 }

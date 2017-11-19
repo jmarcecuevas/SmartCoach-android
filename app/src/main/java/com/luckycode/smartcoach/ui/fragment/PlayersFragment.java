@@ -8,10 +8,14 @@ import android.util.Log;
 
 import com.luckycode.smartcoach.R;
 import com.luckycode.smartcoach.common.LuckyFragment;
+import com.luckycode.smartcoach.interactor.MainInteractor;
 import com.luckycode.smartcoach.model.Player;
+import com.luckycode.smartcoach.presenter.PlayersPresenter;
+import com.luckycode.smartcoach.ui.activity.MainActivity;
 import com.luckycode.smartcoach.ui.activity.PlayerDetailActivity;
 import com.luckycode.smartcoach.ui.adapter.PlayerListAdapter;
 import com.luckycode.smartcoach.ui.itemDecoration.SpaceItemDecoration;
+import com.luckycode.smartcoach.ui.viewModel.PlayersView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,15 +27,21 @@ import butterknife.BindView;
  * Created by marcelocuevas on 10/26/17.
  */
 
-public class PlayersFragment extends LuckyFragment implements PlayerListAdapter.PlayerListener {
+public class PlayersFragment extends LuckyFragment implements PlayerListAdapter.PlayerListener,PlayersView {
     @BindView(R.id.recycler)RecyclerView recyclerView;
     private List<Player> players;
+    private PlayersPresenter presenter;
 
     @Override
     protected void init() {
-        Bundle bundle= getActivity().getIntent().getExtras();
-        players= (List<Player>) bundle.getSerializable("PLAYERS");
+        MainInteractor interactor=new MainInteractor(getContext(),((MainActivity)getActivity()).getHelper());
+        presenter=new PlayersPresenter(this,interactor);
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        players=presenter.getPlayers();
         setRecyclerViewUp();
     }
 
@@ -54,7 +64,8 @@ public class PlayersFragment extends LuckyFragment implements PlayerListAdapter.
     public void onPlayerSelected(Player player) {
         Intent intent=new Intent(getActivity(), PlayerDetailActivity.class);
         Bundle bundle=new Bundle();
-        bundle.putSerializable("PLAYER",player);
+        bundle.putInt("ID",player.getId());
+        bundle.putSerializable("PLAYERS", (Serializable) players);
         intent.putExtras(bundle);
         startActivity(intent);
     }

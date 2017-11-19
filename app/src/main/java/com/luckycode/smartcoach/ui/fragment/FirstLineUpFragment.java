@@ -71,8 +71,8 @@ public class FirstLineUpFragment extends LuckyFragment implements LineUpView{
 
     @Override
     public void showPlayerAvatar(String name, String photo, int position) {
-//        int id=getResources().getIdentifier(photo,"drawable",getContext().getPackageName());
-//        playersViews.get(position).setImageResource(id);
+        int id=getResources().getIdentifier(photo,"drawable",getContext().getPackageName());
+        playersViews.get(position).setImageResource(id);
     }
 
 }

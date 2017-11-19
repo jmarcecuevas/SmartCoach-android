@@ -24,8 +24,7 @@
         android:layout_height="match_parent"
         android:id="@+id/pitch_container"
         android:layout_below="@+id/header_container"
-        android:src="@drawable/field"
-        android:layout_marginBottom="45dp">
+        android:src="@drawable/field">
     </FrameLayout>
 
 </RelativeLayout>

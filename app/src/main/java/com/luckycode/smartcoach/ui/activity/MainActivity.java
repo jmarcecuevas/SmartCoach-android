@@ -31,8 +31,6 @@ public class MainActivity extends LuckyActivity{
     @BindView(R.id.toolbar)Toolbar toolbar;
     @BindView(R.id.container)ViewPager viewPager;
     @BindView(R.id.tabs)TabLayout tabs;
-    private LineUpPresenter presenter;
-    private List<Player> players;
 
     @Override
     protected void init() {

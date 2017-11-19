@@ -25,6 +25,7 @@ public class AddPlayerPresenter extends LuckyPresenter<AddPlayerView>{
                 getView().onEmptySurnameError();
         }else{
             interactor.savePlayer(new Player(name,surname,photo,position,level));
+            getView().onPlayerStored();
         }
     }
 }

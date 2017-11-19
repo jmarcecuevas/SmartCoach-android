@@ -5,8 +5,10 @@ import android.content.res.AssetManager;
 
 import com.google.gson.Gson;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.UpdateBuilder;
 import com.luckycode.smartcoach.common.LuckyInteractor;
 import com.luckycode.smartcoach.model.Player;
+import com.luckycode.smartcoach.model.SerializedList;
 import com.luckycode.smartcoach.presenter.SplashPresenter;
 import com.luckycode.smartcoach.utils.DatabaseHelper;
 import com.luckycode.smartcoach.utils.SettingsManager;
@@ -159,6 +161,44 @@ public class MainInteractor extends LuckyInteractor<SplashPresenter> {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public void saveIncompatiblePlayer(Player inPlayer,Player thePlayer){
+
+//            SerializedList<Integer> newList=inPlayer.getIncompatibles();
+//            newList.add(thePlayer.getId());
+//            Dao dao=dbHelper.getDaoPlayer();
+//            UpdateBuilder<Player, Integer> updateBuilder = dao.updateBuilder();
+//            // set the criteria like you would a QueryBuilder
+//            updateBuilder.where().eq("id", inPlayer.getId());
+//            // update the value of your field(s)
+//            updateBuilder.updateColumnValue("incompatibles",newList);
+//            updateBuilder.update();
+        updateIncompatibles(inPlayer,thePlayer);
+        updateIncompatibles(thePlayer,inPlayer);
+    }
+
+    private void updateIncompatibles(Player inPlayer,Player thePlayer){
+        try {
+            SerializedList<Integer> newIncompatibles=inPlayer.getIncompatibles();
+            newIncompatibles.add(thePlayer.getId());
+            Dao dao=dbHelper.getDaoPlayer();
+            UpdateBuilder<Player,Integer> updateBuilder=dao.updateBuilder();
+            updateBuilder.where().eq("id",inPlayer.getId());
+            updateBuilder.updateColumnValue("incompatibles",newIncompatibles);
+            updateBuilder.update();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public Player getPlayer(int id) {
+        List<Player> players=getPlayers();
+        for(Player player:players){
+            if(player.getId()==id)
+                return player;
+        }
+        return null;
     }
 
     public interface InteractorListener{

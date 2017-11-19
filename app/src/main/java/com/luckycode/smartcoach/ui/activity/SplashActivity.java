@@ -40,14 +40,13 @@ public class SplashActivity extends LuckyActivity implements SplashView {
 
     @Override
     public void onDataReady(List<Player> players) {
-        Bundle bundle=new Bundle();
-        bundle.putSerializable("PLAYERS",(Serializable)players);
-        goToMainActivity(bundle);
+//        Bundle bundle=new Bundle();
+//        bundle.putSerializable("PLAYERS",(Serializable)players);
+        goToMainActivity();
     }
 
-    private void goToMainActivity(Bundle bundle){
+    private void goToMainActivity(){
         Intent intent=new Intent(this,MainActivity.class);
-        intent.putExtras(bundle);
         startActivity(intent);
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
         finish();

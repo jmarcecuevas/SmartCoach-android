@@ -45,11 +45,16 @@ public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSe
     protected void init() {
         MainInteractor interactor = new MainInteractor(getActivity(), ((MainActivity) getActivity()).getHelper());
         presenter = new PitchPresenter(this, interactor);
-        presenter.getTeamFromDB();
 
         spinner.setOnItemSelectedListener(this);
         SpinnerAdapter spinnerAdapter = new SpinnerAdapter(getActivity(), getResources().getStringArray(R.array.linesUp));
         spinner.setAdapter(spinnerAdapter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.getTeamFromDB();
     }
 
     @Override

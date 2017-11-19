@@ -20,4 +20,5 @@ public abstract class LuckyInteractor<T extends LuckyPresenter> {
         return mPresenter;
     }
 
+
 }

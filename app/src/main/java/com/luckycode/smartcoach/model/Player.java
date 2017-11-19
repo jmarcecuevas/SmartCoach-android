@@ -14,7 +14,7 @@ import java.util.List;
 
 @DatabaseTable (tableName = "players")
 public class Player implements Serializable,Comparable<Player>{
-    @DatabaseField
+    @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField
     private String name;
@@ -52,7 +52,7 @@ public class Player implements Serializable,Comparable<Player>{
         return incompatiblesPlayers;
     }
 
-    public List<Integer> getIncompatibles() {
+    public SerializedList<Integer> getIncompatibles() {
         return incompatibles;
     }
 

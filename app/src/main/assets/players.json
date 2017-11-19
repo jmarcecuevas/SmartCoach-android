@@ -6,7 +6,6 @@
     "photo": "sergio_romero",
     "position": "Arquero",
     "level": 6,
-    "dorsal": 1,
     "incompatibles" : [2,4,28]
   },
   {
@@ -16,7 +15,6 @@
     "photo": "nahuel_guzman",
     "position": "Arquero",
     "level": 4,
-    "dorsal": 28,
     "incompatibles" : [1]
   },
   {
@@ -26,7 +24,6 @@
     "photo": "geronimo_rulli",
     "position": "Arquero",
     "level": 7,
-    "dorsal": 82,
     "incompatibles" : []
   },
   {
@@ -36,7 +33,6 @@
     "photo": "nicolas_otamendi",
     "position": "Defensor",
     "level": 7,
-    "dorsal": 2,
     "incompatibles" : [1,6,5]
   },
   {
@@ -46,7 +42,6 @@
     "photo": "javier_mascherano",
     "position": "Defensor",
     "level": 8,
-    "dorsal": 6,
     "incompatibles" : [4]
   },
   {
@@ -56,7 +51,6 @@
     "photo": "federico_fazio",
     "position": "Defensor",
     "level": 5,
-    "dorsal": 3,
     "incompatibles" : [4]
   },
   {
@@ -66,7 +60,6 @@
     "photo": "angel_dimaria",
     "position": "Arquero",
     "level": 7,
-    "dorsal": 7,
     "incompatibles" : []
   },
   {
@@ -76,7 +69,6 @@
     "photo": "javier_pastore",
     "position": "Mediocampista",
     "level": 6,
-    "dorsal": 8,
     "incompatibles" : [9]
   },
   {
@@ -86,7 +78,6 @@
     "photo": "augusto_fernandez",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 5,
     "incompatibles" : [8]
   },
   {
@@ -96,7 +87,6 @@
     "photo": "manuel_lanzini",
     "position": "Mediocampista",
     "level": 6,
-    "dorsal": 15,
     "incompatibles" : []
   },
   {
@@ -106,7 +96,6 @@
     "photo": "sergio_aguero",
     "position": "Delantero",
     "level": 5,
-    "dorsal": 18,
     "incompatibles" : [23]
   },
   {
@@ -116,7 +105,6 @@
     "photo": "paulo_dybala",
     "position": "Delantero",
     "level": 8,
-    "dorsal": 13,
     "incompatibles" : [24]
   },
   {
@@ -126,7 +114,6 @@
     "photo": "mauro_icardi",
     "position": "Delantero",
     "level": 7,
-    "dorsal": 19,
     "incompatibles" : []
   },
   {
@@ -136,7 +123,6 @@
     "photo": "gabriel_mercado",
     "position": "Defensor",
     "level": 6,
-    "dorsal": 4,
     "incompatibles" : []
   },
   {
@@ -146,7 +132,6 @@
     "photo": "guido_pizarro",
     "position": "Mediocampista",
     "level": 6,
-    "dorsal": 19,
     "incompatibles" : [17,18]
   },
   {
@@ -156,7 +141,6 @@
     "photo": "nicolas_pareja",
     "position": "Defensor",
     "level": 6,
-    "dorsal": 21,
     "incompatibles" : []
   },
   {
@@ -166,7 +150,6 @@
     "photo": "joaquin_correa",
     "position": "Delantero",
     "level": 7,
-    "dorsal": 25,
     "incompatibles" : [15]
   },
   {
@@ -176,7 +159,6 @@
     "photo": "ever_banega",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 30,
     "incompatibles" : [15]
   },
   {
@@ -186,7 +168,6 @@
     "photo": "emiliano_rigoni",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 34,
     "incompatibles" : [20,21,22]
   },
   {
@@ -196,7 +177,6 @@
     "photo": "fernando_gago",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 5,
     "incompatibles" : [19]
   },
   {
@@ -206,7 +186,6 @@
     "photo": "leandro_paredes",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 28,
     "incompatibles" : [19]
   },
   {
@@ -216,7 +195,6 @@
     "photo": "marcos_acunia",
     "position": "Mediocampista",
     "level": 7,
-    "dorsal": 37,
     "incompatibles" : [19]
   },
   {
@@ -226,7 +204,6 @@
     "photo": "dario_benedetto",
     "position": "Delantero",
     "level": 9,
-    "dorsal": 9,
     "incompatibles" : [11]
   },
   {
@@ -236,7 +213,6 @@
     "photo": "lionel_messi",
     "position": "Delantero",
     "level": 10,
-    "dorsal": 10,
     "incompatibles" : [12,26,29]
   },
   {
@@ -246,7 +222,6 @@
     "photo": "lucas_biglia",
     "position": "Mediocampista",
     "level": 6,
-    "dorsal": 32,
     "incompatibles" : []
   },
   {
@@ -256,7 +231,6 @@
     "photo": "lautaro_acosta",
     "position": "Delantero",
     "level": 8,
-    "dorsal": 31,
     "incompatibles" : [24]
   },
   {
@@ -266,7 +240,6 @@
     "photo": "gonzalo_higuain",
     "position": "Delantero",
     "level": 3,
-    "dorsal": 49,
     "incompatibles" : []
   },
   {
@@ -276,7 +249,6 @@
     "photo": "pablo_perez",
     "position": "Mediocampista",
     "level": 8,
-    "dorsal": 12,
     "incompatibles" : [1]
   },
   {
@@ -286,7 +258,6 @@
     "photo": "ezequiel_lavezzi",
     "position": "Delantero",
     "level": 8,
-    "dorsal": 12,
     "incompatibles" : [24]
   }
 ]

@@ -46,6 +46,11 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
         return players.size();
     }
 
+    public void update(List<Player> players){
+        this.players=players;
+        notifyDataSetChanged();
+    }
+
     class PlayerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView name;
         private TextView surname;
@@ -67,8 +72,8 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             name.setText(player.getName());
             surname.setText(player.getSurname());
             position.setText(player.getPosition());
-//            int id = context.getResources().getIdentifier(player.getPhoto(), "drawable", context.getPackageName());
-//            photo.setImageResource(id);
+            int id = context.getResources().getIdentifier(player.getPhoto(), "drawable", context.getPackageName());
+            photo.setImageResource(id);
         }
 
         @Override
