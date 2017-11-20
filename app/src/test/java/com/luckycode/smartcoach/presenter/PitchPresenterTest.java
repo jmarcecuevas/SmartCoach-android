@@ -39,6 +39,5 @@ public class PitchPresenterTest {
         verify(interactor).getDefenders();
         verify(interactor).getMidfielders();
         verify(interactor).getForwards();
-        verify(view).onTeamLoaded(new Team());
     }
 }

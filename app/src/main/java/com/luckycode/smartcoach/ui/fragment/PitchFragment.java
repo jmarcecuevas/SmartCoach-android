@@ -1,6 +1,8 @@
 package com.luckycode.smartcoach.ui.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.os.Parcel;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -30,6 +32,7 @@ import butterknife.OnClick;
  * Created by marcelocuevas on 10/26/17.
  */
 
+@SuppressLint("ParcelCreator")
 public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSelectedListener,PitchView,LineUpListener {
     @BindView(R.id.spinner) Spinner spinner;
     @BindView(R.id.teamLevel)TextView teamLevel;
@@ -126,6 +129,16 @@ public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSe
     public void onTitularTeamCalculated(TitularTeam titularTeam) {
         this.titularTeam=titularTeam;
         teamLevel.setText("NIVEL TOTAL: "+ String.valueOf(titularTeam.getLevel()));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }
 

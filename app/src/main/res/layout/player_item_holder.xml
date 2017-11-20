@@ -56,14 +56,15 @@
         android:text="Delantero" />
 
 
-    <ProgressBar
-        android:id="@+id/levelBar"
-        style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+    <TextView
+        android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_orange_light"
+        android:textStyle="bold"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/levelTV"
-        android:indeterminateOnly="true"/>
+        android:layout_below="@+id/levelTV" />
 
     <TextView
         android:layout_width="wrap_content"

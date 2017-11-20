@@ -36,6 +36,8 @@ public class PlayersFragment extends LuckyFragment implements PlayerListAdapter.
     protected void init() {
         MainInteractor interactor=new MainInteractor(getContext(),((MainActivity)getActivity()).getHelper());
         presenter=new PlayersPresenter(this,interactor);
+        SpaceItemDecoration itemDecoration=new SpaceItemDecoration(8,true);
+        recyclerView.addItemDecoration(itemDecoration);
     }
 
     @Override
@@ -48,8 +50,6 @@ public class PlayersFragment extends LuckyFragment implements PlayerListAdapter.
     public void setRecyclerViewUp(){
         PlayerListAdapter adapter=new PlayerListAdapter(getContext(),players,this);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        SpaceItemDecoration itemDecoration=new SpaceItemDecoration(8,true);
-        recyclerView.addItemDecoration(itemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }

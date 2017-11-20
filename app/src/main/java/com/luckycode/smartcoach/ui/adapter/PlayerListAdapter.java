@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.luckycode.smartcoach.R;
 import com.luckycode.smartcoach.model.Player;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -57,7 +58,6 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
         private TextView position;
         private CircleImageView photo;
         private TextView level;
-        private TextView dorsal;
 
         public PlayerViewHolder(View itemView) {
             super(itemView);
@@ -66,6 +66,7 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             surname=itemView.findViewById(R.id.surname);
             photo=itemView.findViewById(R.id.photo);
             position=itemView.findViewById(R.id.position);
+            level=itemView.findViewById(R.id.level);
         }
 
         public void bind(Player player){
@@ -73,7 +74,8 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             surname.setText(player.getSurname());
             position.setText(player.getPosition());
             int id = context.getResources().getIdentifier(player.getPhoto(), "drawable", context.getPackageName());
-            photo.setImageResource(id);
+            Picasso.with(context).load(id).centerCrop().resize(80,80).into(photo);
+            level.setText(String.valueOf(player.getLevel()));
         }
 
         @Override

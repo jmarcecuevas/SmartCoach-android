@@ -18,6 +18,7 @@ import com.luckycode.smartcoach.model.TitularTeam;
 import com.luckycode.smartcoach.presenter.LineUpPresenter;
 import com.luckycode.smartcoach.ui.activity.MainActivity;
 import com.luckycode.smartcoach.ui.viewModel.LineUpView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class LineUpFragment extends LuckyFragment implements LineUpView{
         args.putInt("cantDef",cantDef);
         args.putInt("cantMid",cantMid);
         args.putInt("cantFor",cantFor);
-        args.putSerializable("listener",listener);
+        args.putParcelable("listener",listener);
         myFragment.setArguments(args);
         return myFragment;
     }
@@ -64,7 +65,7 @@ public class LineUpFragment extends LuckyFragment implements LineUpView{
         cantDef=getArguments().getInt("cantDef",4);
         cantMid=getArguments().getInt("cantMid",3);
         cantFor=getArguments().getInt("cantFor",3);
-        listener= (LineUpListener) getArguments().getSerializable("listener");
+        listener= (LineUpListener) getArguments().getParcelable("listener");
     }
 
     @Override
@@ -94,7 +95,7 @@ public class LineUpFragment extends LuckyFragment implements LineUpView{
     @Override
     public void showPlayerAvatar(String name, String photo, int position) {
         int id=getResources().getIdentifier(photo,"drawable",getContext().getPackageName());
-        playersViews.get(position).setImageResource(id);
+        Picasso.with(getContext()).load(id).centerCrop().resize(58,58).into(playersViews.get(position));
     }
 
     @Override

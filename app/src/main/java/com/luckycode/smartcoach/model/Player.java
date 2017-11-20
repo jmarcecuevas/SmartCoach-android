@@ -64,6 +64,7 @@ public class Player implements Serializable,Comparable<Player>{
         incompatibles.add(id);
     }
 
+
     public int getLevel() {
         return level;
     }

@@ -44,6 +44,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.delight-im:Android-SimpleLocation:v1.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'info.hoang8f:android-segmented:1.0.6'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.7.22'
