@@ -56,8 +56,12 @@ public class Player implements Serializable,Comparable<Player>{
         return incompatibles;
     }
 
-    public void addIncompatible(Player incompatiblePlayer){
+    public void addIncompatiblePlayer(Player incompatiblePlayer){
         incompatiblesPlayers.add(incompatiblePlayer);
+    }
+
+    public void addIncompatible(int id){
+        incompatibles.add(id);
     }
 
     public int getLevel() {
@@ -82,6 +86,18 @@ public class Player implements Serializable,Comparable<Player>{
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setIncompatiblesPlayers(List<Player> incompatiblesPlayers) {
+        this.incompatiblesPlayers = incompatiblesPlayers;
     }
 
     @Override

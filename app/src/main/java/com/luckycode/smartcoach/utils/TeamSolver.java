@@ -1,4 +1,8 @@
-package com.luckycode.smartcoach.model;
+package com.luckycode.smartcoach.utils;
+
+import com.luckycode.smartcoach.model.Player;
+import com.luckycode.smartcoach.model.Team;
+import com.luckycode.smartcoach.model.TitularTeam;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +18,7 @@ import java.util.List;
 
 public class TeamSolver {
 
-    public static TitularTeam getTitularTeam(Team team,int cantDef,int cantMid,int cantForw){
+    public static TitularTeam getTitularTeam(Team team, int cantDef, int cantMid, int cantForw){
         List<Player> titularTeam=new ArrayList<>();
 
         getBestPlayers(1,team.getGoalkeepers(),titularTeam);
@@ -25,9 +29,9 @@ public class TeamSolver {
         return new TitularTeam(titularTeam);
     }
 
-    private static List<Player> getBestPlayers(int amount,List<Player> players,List<Player> titularTeam){
+    public static List<Player> getBestPlayers(int amount,List<Player> players,List<Player> titularTeam){
         List<Player> solution=new ArrayList<>();
-        order(players);
+        sort(players);
 
         for(Player player:players){
             if (solution.size()==amount)
@@ -40,7 +44,7 @@ public class TeamSolver {
         return solution;
     }
 
-    private static void order(List<Player> players){
+    public static void sort(List<Player> players){
         Collections.sort(players);
     }
 

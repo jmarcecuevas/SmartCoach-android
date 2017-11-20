@@ -7,6 +7,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
         android:id="@+id/header_container"
         android:background="@android:color/holo_orange_dark">
 
@@ -17,6 +19,28 @@
             android:id="@+id/spinner">
         </Spinner>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seePlayers"
+            android:text="VER JUGADORES"
+            android:clickable="true"
+            android:textColor="#ffffff"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teamLevel"
+            android:text="NIVEL:"
+            android:clickable="true"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"/>
+
     </RelativeLayout>
 
     <FrameLayout
@@ -24,7 +48,7 @@
         android:layout_height="match_parent"
         android:id="@+id/pitch_container"
         android:layout_below="@+id/header_container"
-        android:src="@drawable/field">
+        android:src="@drawable/fieldd">
     </FrameLayout>
 
 </RelativeLayout>

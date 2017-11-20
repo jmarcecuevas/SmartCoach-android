@@ -1,6 +1,7 @@
 package com.luckycode.smartcoach.ui.viewModel;
 
 import com.luckycode.smartcoach.model.Player;
+import com.luckycode.smartcoach.model.TitularTeam;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  */
 
 public interface LineUpView {
-    void onPlayerSelected(Player player);
+    void titularTeamReady(TitularTeam team);
     void showPlayerAvatar(String name,String photo,int position);
+    void showTeamError(String message);
 }

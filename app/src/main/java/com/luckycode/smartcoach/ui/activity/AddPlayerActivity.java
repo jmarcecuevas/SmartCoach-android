@@ -1,15 +1,8 @@
 package com.luckycode.smartcoach.ui.activity;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -20,7 +13,6 @@ import com.luckycode.smartcoach.common.LuckyActivity;
 import com.luckycode.smartcoach.interactor.MainInteractor;
 import com.luckycode.smartcoach.presenter.AddPlayerPresenter;
 import com.luckycode.smartcoach.ui.viewModel.AddPlayerView;
-import com.luckycode.smartcoach.utils.ImagePicker;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -33,8 +25,6 @@ import info.hoang8f.android.segmented.SegmentedGroup;
 public class AddPlayerActivity extends LuckyActivity implements AddPlayerView,RadioGroup.OnCheckedChangeListener,
         SeekBar.OnSeekBarChangeListener{
 
-    private static final int READ_STORAGE_PERMISSION_REQUEST_CODE = 123;
-    private static final int PICK_IMAGE_ID = 234;
     @BindView(R.id.photo)ImageView photo;
     @BindView(R.id.name)TextView name;
     @BindView(R.id.surname)TextView surname;
@@ -74,12 +64,6 @@ public class AddPlayerActivity extends LuckyActivity implements AddPlayerView,Ra
     public void onClick(View view){
         presenter.savePlayer(name.getText().toString(),surname.getText().toString(),
                 "bandera",position,level);
-    }
-
-    @OnClick(R.id.photo)
-    public void onPhotoClick(View view){
-        Intent chooseImageIntent = ImagePicker.getPickImageIntent(this);
-        startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
     }
 
     @Override

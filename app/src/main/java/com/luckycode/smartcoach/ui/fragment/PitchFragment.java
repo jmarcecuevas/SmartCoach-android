@@ -1,40 +1,42 @@
 package com.luckycode.smartcoach.ui.fragment;
 
+import android.app.Dialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.luckycode.smartcoach.R;
 import com.luckycode.smartcoach.common.LuckyFragment;
 import com.luckycode.smartcoach.interactor.MainInteractor;
-import com.luckycode.smartcoach.model.Player;
+import com.luckycode.smartcoach.interactor.listener.LineUpListener;
 import com.luckycode.smartcoach.model.Team;
-import com.luckycode.smartcoach.presenter.LineUpPresenter;
+import com.luckycode.smartcoach.model.TitularTeam;
 import com.luckycode.smartcoach.presenter.PitchPresenter;
 import com.luckycode.smartcoach.ui.activity.MainActivity;
 import com.luckycode.smartcoach.ui.adapter.SpinnerAdapter;
-import com.luckycode.smartcoach.ui.viewModel.LineUpView;
 import com.luckycode.smartcoach.ui.viewModel.PitchView;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by marcelocuevas on 10/26/17.
  */
 
-public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSelectedListener,PitchView {
-    @BindView(R.id.spinner)
-    Spinner spinner;
+public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSelectedListener,PitchView,LineUpListener {
+    @BindView(R.id.spinner) Spinner spinner;
+    @BindView(R.id.teamLevel)TextView teamLevel;
     private PitchPresenter presenter;
     private Team team;
+    private TitularTeam titularTeam;
+    private Fragment myNewFragment;
 
     @Override
     protected int layout() {
@@ -64,7 +66,7 @@ public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSe
     }
 
     private void showInitialFragment(Team team,int cantDef,int cantMid,int cantFor,int layout){
-        Fragment myNewFragment = FirstLineUpFragment.newInstance(team,cantDef,cantMid,cantFor,layout);
+        myNewFragment = LineUpFragment.newInstance(team,cantDef,cantMid,cantFor,layout,this);
         String newFragment = myNewFragment.getClass().getName();
         FragmentTransaction t = getActivity().
                 getSupportFragmentManager().
@@ -101,9 +103,29 @@ public class PitchFragment extends LuckyFragment implements AdapterView.OnItemSe
 
     }
 
+    @OnClick(R.id.seePlayers)
+    public void onClick(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Mejor equipo");
+        ListView playersList = new ListView(getContext());
+        ArrayAdapter<String> modeAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1,
+                android.R.id.text1, presenter.getPlayersNames(titularTeam.getPlayers()));
+        playersList.setAdapter(modeAdapter);
+        builder.setView(playersList);
+        final Dialog dialog = builder.create();
+        dialog.setCancelable(true);
+        dialog.show();
+    }
+
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
 
+
+    @Override
+    public void onTitularTeamCalculated(TitularTeam titularTeam) {
+        this.titularTeam=titularTeam;
+        teamLevel.setText("NIVEL TOTAL: "+ String.valueOf(titularTeam.getLevel()));
     }
 }
 

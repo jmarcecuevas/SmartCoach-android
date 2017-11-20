@@ -20,14 +20,6 @@ public class PlayerDetailPresenter extends LuckyPresenter<PlayerDetailView>{
         this.interactor=interactor;
     }
 
-    public List<String> getPlayersNames(List<Player> players){
-        List<String> names=new ArrayList<>();
-        for(Player player:players){
-            names.add(player.getName()+" "+player.getSurname());
-        }
-        return names;
-    }
-
     public void playerItemSelected(Player myPlayer,Player playerSelected) {
         if (myPlayer.equals(playerSelected))
             getView().showErrorTryingToAddIncompatiblePlayer("No se puede seleccionar como incompatible");

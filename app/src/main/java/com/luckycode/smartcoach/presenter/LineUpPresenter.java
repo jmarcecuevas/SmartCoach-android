@@ -4,10 +4,11 @@ import com.luckycode.smartcoach.common.LuckyPresenter;
 import com.luckycode.smartcoach.interactor.MainInteractor;
 import com.luckycode.smartcoach.model.Player;
 import com.luckycode.smartcoach.model.Team;
-import com.luckycode.smartcoach.model.TeamSolver;
+import com.luckycode.smartcoach.utils.TeamSolver;
 import com.luckycode.smartcoach.model.TitularTeam;
 import com.luckycode.smartcoach.ui.viewModel.LineUpView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,20 +16,22 @@ import java.util.List;
  */
 
 public class LineUpPresenter extends LuckyPresenter<LineUpView>{
-    private MainInteractor interactor;
 
-    public LineUpPresenter(LineUpView mView,MainInteractor interactor) {
+    public LineUpPresenter(LineUpView mView) {
         super(mView);
-        this.interactor=interactor;
     }
 
     public void getTitularTeam(Team team,int cantDef,int cantMid,int cantFor){
         TitularTeam myTeam=TeamSolver.getTitularTeam(team,cantDef,cantMid,cantFor);
         List<Player> players=myTeam.getPlayers();
-
-        for(int i=0;i<players.size();i++){
-            getView().showPlayerAvatar(players.get(i).getName(),players.get(i)
-                .getPhoto(),i);
+        if(players.size()!=11)
+            getView().showTeamError("No se puede armar un equipo con estas condiciones");
+        else {
+            for (int i = 0; i < players.size(); i++) {
+                getView().showPlayerAvatar(players.get(i).getName(), players.get(i)
+                        .getPhoto(), i);
+            }
+            getView().titularTeamReady(myTeam);
         }
     }
 }

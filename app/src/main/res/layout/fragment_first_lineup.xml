@@ -8,17 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/field"/>
+        android:src="@drawable/fieldd"/>
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <RelativeLayout
             app:layout_widthPercent="100%"
-            app:layout_heightPercent="23%"
+            app:layout_heightPercent="18%"
             android:id="@+id/goalkeeper_container">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -33,7 +33,7 @@
 
         <RelativeLayout
             app:layout_widthPercent="100%"
-            app:layout_heightPercent="15%"
+            app:layout_heightPercent="18%"
             android:layout_below="@+id/goalkeeper_container"
             android:id="@+id/defenders_container">
 
@@ -56,7 +56,7 @@
                     android:layout_height="58dp"
                     android:id="@+id/third"
                     android:src="@drawable/empty_profile"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -65,7 +65,7 @@
                     android:layout_height="58dp"
                     android:id="@+id/fourth"
                     android:src="@drawable/empty_profile"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -74,7 +74,7 @@
                     android:layout_height="58dp"
                     android:src="@drawable/empty_profile"
                     android:id="@+id/fifth"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -84,7 +84,7 @@
 
         <RelativeLayout
             app:layout_widthPercent="100%"
-            app:layout_heightPercent="18%"
+            app:layout_heightPercent="23%"
             android:id="@+id/midfielders_container"
             android:layout_below="@+id/defenders_container"
             android:layout_alignParentStart="true">
@@ -107,7 +107,7 @@
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:id="@+id/seventh"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:src="@drawable/empty_profile"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
@@ -117,7 +117,7 @@
                     android:layout_height="58dp"
                     android:id="@+id/eighth"
                     android:src="@drawable/empty_profile"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -127,7 +127,7 @@
 
         <RelativeLayout
             app:layout_widthPercent="100%"
-            app:layout_heightPercent="25%"
+            app:layout_heightPercent="28%"
             android:layout_below="@+id/midfielders_container"
             android:id="@+id/forwards_container">
 
@@ -150,7 +150,7 @@
                     android:layout_height="58dp"
                     android:src="@drawable/empty_profile"
                     android:id="@+id/tenth"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_gravity="bottom"
                     android:layout_centerHorizontal="true"/>
 
@@ -159,7 +159,7 @@
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:src="@drawable/empty_profile"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="bottom" />
 

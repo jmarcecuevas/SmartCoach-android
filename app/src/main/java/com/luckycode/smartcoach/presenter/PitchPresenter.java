@@ -7,6 +7,7 @@ import com.luckycode.smartcoach.model.Team;
 import com.luckycode.smartcoach.ui.fragment.PitchFragment;
 import com.luckycode.smartcoach.ui.viewModel.PitchView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**

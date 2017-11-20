@@ -19,9 +19,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by marcelocuevas on 10/14/17.
@@ -146,7 +144,7 @@ public class MainInteractor extends LuckyInteractor<SplashPresenter> {
             Dao dao=dbHelper.getDaoPlayer();
             for(Player player:players){
                 for(Integer incomID:player.getIncompatibles()){
-                    player.addIncompatible((Player) dao.queryForEq("id",incomID).get(0));
+                    player.addIncompatiblePlayer((Player) dao.queryForEq("id",incomID).get(0));
                 }
             }
         } catch (SQLException e) {
